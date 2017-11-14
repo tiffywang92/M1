@@ -1,6 +1,6 @@
 var mongodb = require('mongodb');
-var mongoDBURI = process.env.MONGODB_URI || 'mongodb://rd7359:tiffany92!@ds245755.mlab.com:45755/heroku_8vdpfmgs';
-
+//var mongoDBURI = process.env.MONGODB_URI || 'mongodb://rd7359:tiffany92!@ds245755.mlab.com:45755/heroku_8vdpfmgs';
+var mongoDBURI = process.env.MONGODB_URI || 'mongodb://wang:wang33@ds245755.mlab.com:45755/heroku_8vdpfmgs';
 
 /** getAllOrders controller connects to MongoDB database, queries the Orders collection to retrieve all the Orders
  *  and builds the output using the ejs template getAllOrders.ejs found in views directory
@@ -11,7 +11,9 @@ var mongoDBURI = process.env.MONGODB_URI || 'mongodb://rd7359:tiffany92!@ds24575
 module.exports.getAllOrders =  function (request, response) {
 
     mongodb.MongoClient.connect(mongoDBURI, function(err, db) {
-        if(err) throw err;
+        if(err)
+        {
+            throw err; }
 
         //get collection of orders
         var Orders = db.collection('Orders');
