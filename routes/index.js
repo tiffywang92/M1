@@ -7,6 +7,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 }); */
 
+
+//map the URI /getAllOrders to its controller code
 router.get('/getAllOrders', controllerMongoCollection.getAllOrders);
 
 module.exports = router;
